@@ -1,0 +1,6 @@
+gestorbiblioteca.VentanaInsertarAutor$1
+gestorbiblioteca.VentanaInsertarAutor$2
+gestorbiblioteca.VentanaInsertarAutor$3
+gestorbiblioteca.VentanaInsertarAutor
+gestorbiblioteca.VentanaInsertarAutor$4
+gestorbiblioteca.VentanaInsertarAutor$5
