@@ -5,7 +5,9 @@
  */
 package Vista;
 
+import Controlador.ControladorAutor;
 import Controlador.ControladorLibro;
+import javax.swing.JTextField;
 
 /**
  *
@@ -16,9 +18,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
+    ControladorLibro cl;
+    ControladorAutor ca;
     public VentanaPrincipal() {
         initComponents();
-        ControladorLibro cl = new ControladorLibro(this);
+        cl = new ControladorLibro(this);
+        ca = new ControladorAutor(this);
         cl.ponerAutores(this.jComboBox1);
         
     }
@@ -123,15 +128,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        btnGuardarAutor = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        campoNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        campoFecha = new javax.swing.JTextField();
+        campoNacionalidad = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        btnGuardarIlustrador = new javax.swing.JButton();
+        btnGuardarTraductor = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -856,7 +861,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 381, Short.MAX_VALUE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 399, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -867,7 +872,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 399, Short.MAX_VALUE)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 401, Short.MAX_VALUE)
                     .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1039,57 +1044,58 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(191, 157, 126));
 
-        jButton4.setBackground(new java.awt.Color(242, 226, 206));
-        jButton4.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton4.setText("Guardar Autor");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarAutor.setBackground(new java.awt.Color(242, 226, 206));
+        btnGuardarAutor.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnGuardarAutor.setText("Guardar Autor");
+        btnGuardarAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnGuardarAutorActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel2.setText("Nombre");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        campoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                campoNombreActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel5.setText("Nacionalidad");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        campoFecha.setText("AAAA-MM-DD");
+        campoFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                campoFechaActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        campoNacionalidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                campoNacionalidadActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel6.setText("Fecha de Nacimiento");
 
-        jButton8.setBackground(new java.awt.Color(242, 226, 206));
-        jButton8.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton8.setText("Guardar Ilustrador");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarIlustrador.setBackground(new java.awt.Color(242, 226, 206));
+        btnGuardarIlustrador.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnGuardarIlustrador.setText("Guardar Ilustrador");
+        btnGuardarIlustrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnGuardarIlustradorActionPerformed(evt);
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(242, 226, 206));
-        jButton10.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton10.setText("Guardar Traductor");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarTraductor.setBackground(new java.awt.Color(242, 226, 206));
+        btnGuardarTraductor.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnGuardarTraductor.setText("Guardar Traductor");
+        btnGuardarTraductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btnGuardarTraductorActionPerformed(evt);
             }
         });
 
@@ -1103,45 +1109,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(campoNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton4)
+                        .addComponent(btnGuardarAutor)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
+                        .addComponent(btnGuardarIlustrador)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10)))
+                        .addComponent(btnGuardarTraductor)))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(campoNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(campoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton8)
-                    .addComponent(jButton10))
+                    .addComponent(btnGuardarAutor)
+                    .addComponent(btnGuardarIlustrador)
+                    .addComponent(btnGuardarTraductor))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -1307,7 +1313,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         
-        ControladorLibro cl = new ControladorLibro(this);
+        
         //cl.agregarLibro();                
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -1339,29 +1345,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField58ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnGuardarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAutorActionPerformed
+        ca.insertarAutor();
+    }//GEN-LAST:event_btnGuardarAutorActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void campoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_campoNombreActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void campoFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoFechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_campoFechaActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void campoNacionalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNacionalidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_campoNacionalidadActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnGuardarIlustradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarIlustradorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnGuardarIlustradorActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btnGuardarTraductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTraductorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btnGuardarTraductorActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
@@ -1414,19 +1420,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getCampoFecha() {
+        return campoFecha;
+    }
+
+    public JTextField getCampoNacionalidad() {
+        return campoNacionalidad;
+    }
+
+    public JTextField getCampoNombre() {
+        return campoNombre;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardarAutor;
+    private javax.swing.JButton btnGuardarIlustrador;
+    private javax.swing.JButton btnGuardarTraductor;
+    private javax.swing.JTextField campoFecha;
+    private javax.swing.JTextField campoNacionalidad;
+    private javax.swing.JTextField campoNombre;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1508,14 +1529,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField48;
     private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField51;
     private javax.swing.JTextField jTextField54;
     private javax.swing.JTextField jTextField55;
     private javax.swing.JTextField jTextField57;
     private javax.swing.JTextField jTextField58;
     private javax.swing.JTextField jTextField59;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
