@@ -7,8 +7,10 @@ package Controlador;
 
 import Logica.Autor;
 import Logica.Ilustrador;
+import Logica.Traductor;
 import Persistencia.AutorDB;
 import Persistencia.IlustradorDB;
+import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import javax.swing.JFrame;
 
@@ -30,7 +32,13 @@ public class ControladorAutor {
     }
     public void insertarIlustrador(){
         Ilustrador ilustrador = new Ilustrador(jframe.getCampoNombre().getText());        
-        IlustradorDB adb = new IlustradorDB();
-        adb.addIlustrador(ilustrador);        
+        IlustradorDB idb = new IlustradorDB();
+        idb.addIlustrador(ilustrador);        
+    }
+    public void insertarTraductor(){
+        Traductor traductor = new Traductor(jframe.getCampoNombre().getText(),
+                                jframe.getCampoNacionalidad().getText());        
+        TraductorDB tdb = new TraductorDB();
+        tdb.addTraductor(traductor);        
     }
 }

@@ -1366,7 +1366,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarIlustradorActionPerformed
 
     private void btnGuardarTraductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTraductorActionPerformed
-        // TODO add your handling code here:
+        ca.insertarTraductor();
     }//GEN-LAST:event_btnGuardarTraductorActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed

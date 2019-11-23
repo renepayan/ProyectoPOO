@@ -56,4 +56,14 @@ public class Traductor {
         traducir();
         System.out.println(libro.toString());
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+    
+    
 }
