@@ -6,7 +6,9 @@
 package Controlador;
 
 import Logica.Autor;
+import Logica.Ilustrador;
 import Persistencia.AutorDB;
+import Persistencia.IlustradorDB;
 import Vista.VentanaPrincipal;
 import javax.swing.JFrame;
 
@@ -25,5 +27,10 @@ public class ControladorAutor {
                                 jframe.getCampoFecha().getText());        
         AutorDB adb = new AutorDB();
         adb.addAutor(autor);        
+    }
+    public void insertarIlustrador(){
+        Ilustrador ilustrador = new Ilustrador(jframe.getCampoNombre().getText());        
+        IlustradorDB adb = new IlustradorDB();
+        adb.addIlustrador(ilustrador);        
     }
 }

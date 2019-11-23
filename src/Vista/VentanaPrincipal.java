@@ -1300,7 +1300,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1362,7 +1362,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoNacionalidadActionPerformed
 
     private void btnGuardarIlustradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarIlustradorActionPerformed
-        // TODO add your handling code here:
+        ca.insertarIlustrador();
     }//GEN-LAST:event_btnGuardarIlustradorActionPerformed
 
     private void btnGuardarTraductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTraductorActionPerformed

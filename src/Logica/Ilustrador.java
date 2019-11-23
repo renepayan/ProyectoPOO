@@ -14,8 +14,7 @@ package Logica;
 
  */
 public class Ilustrador {
-    private String nombre;
-    private Libro libro;
+    private String nombre;    
     
     public Ilustrador (){
         this("");
@@ -57,6 +56,6 @@ public class Ilustrador {
     void ilustrar(Miniatura miniatura, Libro libro){
         ilustrar(miniatura);
         System.out.println(" del libro"+libro.toString());
-        this.libro = libro;        
+               
     }
 }
