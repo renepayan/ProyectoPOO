@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -42,6 +44,23 @@ public class IlustradorDB {
         }
         conexion.cerrar();
         return ilustrador;
+    }
+    public List<Ilustrador> getIlustradores(){
+        List<Ilustrador> ilustradores = new ArrayList<Ilustrador>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Ilustrador");            
+            ResultSet rs = preparedStmt.executeQuery();           
+            while(rs.next()){
+                ilustradores.add(new Ilustrador(
+                    rs.getString("Nombre")                    
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return ilustradores;
     }
     public int addIlustrador(Ilustrador ilustrador){
         int retorno = 0;
