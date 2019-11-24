@@ -7,9 +7,11 @@ package Controlador;
 
 import Logica.Autor;
 import Logica.Ilustrador;
+import Logica.Libro;
 import Logica.Traductor;
 import Persistencia.AutorDB;
 import Persistencia.IlustradorDB;
+import Persistencia.LibroDB;
 import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import java.util.List;
@@ -24,6 +26,13 @@ public class ControladorLibro {
     private VentanaPrincipal jframe;
     public ControladorLibro(JFrame jframe){
         this.jframe = (VentanaPrincipal)jframe;
+    }
+    public void insertarLibro(){
+        Libro libro = new Libro(jframe.getCampoTituloLibro().getText(),
+                Integer.parseInt(jframe.getCampoAnioPublicacionLibro().getText()),jframe.getCampoIsbnLibro().getText(),
+                jframe.getCampoEdicionLibro().getText(),jframe.getCampoVolumenLibro().getText(),jframe.getCampoIdiomaLibro().getText());        
+        LibroDB adb = new LibroDB();
+        adb.addLibro(libro);        
     }
     public void ponerAutores(){
         JComboBox jcombo= jframe.getComboBoxAutores();

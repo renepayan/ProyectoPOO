@@ -89,27 +89,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jPanel25 = new javax.swing.JPanel();
-        jButton12 = new javax.swing.JButton();
+        btnGuardarLibro = new javax.swing.JButton();
         jLabel60 = new javax.swing.JLabel();
-        jTextField48 = new javax.swing.JTextField();
+        campoTituloLibro = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
-        jTextField49 = new javax.swing.JTextField();
+        campoAnioPublicacionLibro = new javax.swing.JTextField();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        jTextField51 = new javax.swing.JTextField();
+        campoIsbnLibro = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        jTextField54 = new javax.swing.JTextField();
+        campoIdiomaLibro = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
-        jTextField55 = new javax.swing.JTextField();
+        campoEditorialLibro = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
-        jTextField57 = new javax.swing.JTextField();
+        campoEdicionLibro = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
-        jTextField58 = new javax.swing.JTextField();
+        campoVolumenLibro = new javax.swing.JTextField();
         jLabel72 = new javax.swing.JLabel();
-        jTextField59 = new javax.swing.JTextField();
+        campoPuntuacionLibro = new javax.swing.JTextField();
         comboBoxAutores = new javax.swing.JComboBox<>();
         comboBoxTraductores = new javax.swing.JComboBox<>();
         comboBoxIlustradores = new javax.swing.JComboBox<>();
@@ -618,30 +618,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(191, 157, 126));
 
-        jButton12.setBackground(new java.awt.Color(242, 226, 206));
-        jButton12.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
-        jButton12.setText("Guardar Libro");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarLibro.setBackground(new java.awt.Color(242, 226, 206));
+        btnGuardarLibro.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
+        btnGuardarLibro.setText("Guardar Libro");
+        btnGuardarLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                btnGuardarLibroActionPerformed(evt);
             }
         });
 
         jLabel60.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel60.setText("Titulo");
 
-        jTextField48.addActionListener(new java.awt.event.ActionListener() {
+        campoTituloLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField48ActionPerformed(evt);
+                campoTituloLibroActionPerformed(evt);
             }
         });
 
         jLabel61.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel61.setText("Autor(es)");
 
-        jTextField49.addActionListener(new java.awt.event.ActionListener() {
+        campoAnioPublicacionLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField49ActionPerformed(evt);
+                campoAnioPublicacionLibroActionPerformed(evt);
             }
         });
 
@@ -651,9 +651,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel63.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel63.setText("ISBN");
 
-        jTextField51.addActionListener(new java.awt.event.ActionListener() {
+        campoIsbnLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField51ActionPerformed(evt);
+                campoIsbnLibroActionPerformed(evt);
             }
         });
 
@@ -663,9 +663,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel65.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel65.setText("Traductor");
 
-        jTextField54.addActionListener(new java.awt.event.ActionListener() {
+        campoIdiomaLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField54ActionPerformed(evt);
+                campoIdiomaLibroActionPerformed(evt);
             }
         });
 
@@ -675,18 +675,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel67.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel67.setText("Editorial");
 
-        jTextField55.addActionListener(new java.awt.event.ActionListener() {
+        campoEditorialLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField55ActionPerformed(evt);
+                campoEditorialLibroActionPerformed(evt);
             }
         });
 
         jLabel68.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel68.setText("Genero(s)");
 
-        jTextField57.addActionListener(new java.awt.event.ActionListener() {
+        campoEdicionLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField57ActionPerformed(evt);
+                campoEdicionLibroActionPerformed(evt);
             }
         });
 
@@ -696,18 +696,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel70.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel70.setText("Idioma");
 
-        jTextField58.addActionListener(new java.awt.event.ActionListener() {
+        campoVolumenLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField58ActionPerformed(evt);
+                campoVolumenLibroActionPerformed(evt);
             }
         });
 
         jLabel72.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel72.setText("Puntuacion");
 
-        jTextField59.addActionListener(new java.awt.event.ActionListener() {
+        campoPuntuacionLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField59ActionPerformed(evt);
+                campoPuntuacionLibroActionPerformed(evt);
             }
         });
 
@@ -747,13 +747,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel62)
-                            .addComponent(jTextField49, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addComponent(campoAnioPublicacionLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                             .addComponent(jLabel60)
-                            .addComponent(jTextField48, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addComponent(campoTituloLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                             .addComponent(jLabel63)
-                            .addComponent(jTextField51, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addComponent(campoIsbnLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                             .addComponent(jLabel64)
-                            .addComponent(jButton12)
+                            .addComponent(btnGuardarLibro)
                             .addComponent(jLabel65)
                             .addComponent(jLabel61)
                             .addComponent(comboBoxTraductores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -762,18 +762,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel66)
                     .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextField58, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoVolumenLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel69)
-                            .addComponent(jTextField57, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(campoEdicionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel70)
-                    .addComponent(jTextField54, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoIdiomaLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel67)
-                    .addComponent(jTextField55, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoEditorialLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel68)
                     .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField59, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoPuntuacionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(120, 120, 120))
         );
         jPanel25Layout.setVerticalGroup(
@@ -784,11 +784,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addComponent(jLabel60)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoTituloLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel62)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoAnioPublicacionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel61)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -796,7 +796,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addComponent(jLabel63)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoIsbnLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel64)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -806,24 +806,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboBoxTraductores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton12)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnGuardarLibro)
+                        .addContainerGap(35, Short.MAX_VALUE))
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addComponent(jLabel69)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoEdicionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel66)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoVolumenLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel70)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoIdiomaLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel67)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoEditorialLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel68)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -831,7 +831,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel72)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoPuntuacionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))))
         );
 
@@ -881,7 +881,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, 401, Short.MAX_VALUE)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1316,39 +1316,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void btnGuardarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarLibroActionPerformed
         
-        
-        //cl.agregarLibro();                
-    }//GEN-LAST:event_jButton12ActionPerformed
+        cl.insertarLibro();                
+    }//GEN-LAST:event_btnGuardarLibroActionPerformed
 
-    private void jTextField48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField48ActionPerformed
+    private void campoTituloLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTituloLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField48ActionPerformed
+    }//GEN-LAST:event_campoTituloLibroActionPerformed
 
-    private void jTextField49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField49ActionPerformed
+    private void campoAnioPublicacionLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAnioPublicacionLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField49ActionPerformed
+    }//GEN-LAST:event_campoAnioPublicacionLibroActionPerformed
 
-    private void jTextField51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField51ActionPerformed
+    private void campoIsbnLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIsbnLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField51ActionPerformed
+    }//GEN-LAST:event_campoIsbnLibroActionPerformed
 
-    private void jTextField54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField54ActionPerformed
+    private void campoIdiomaLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdiomaLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField54ActionPerformed
+    }//GEN-LAST:event_campoIdiomaLibroActionPerformed
 
-    private void jTextField55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField55ActionPerformed
+    private void campoEditorialLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEditorialLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField55ActionPerformed
+    }//GEN-LAST:event_campoEditorialLibroActionPerformed
 
-    private void jTextField57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField57ActionPerformed
+    private void campoEdicionLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEdicionLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField57ActionPerformed
+    }//GEN-LAST:event_campoEdicionLibroActionPerformed
 
-    private void jTextField58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField58ActionPerformed
+    private void campoVolumenLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoVolumenLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField58ActionPerformed
+    }//GEN-LAST:event_campoVolumenLibroActionPerformed
 
     private void btnGuardarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAutorActionPerformed
         ca.insertarAutor();
@@ -1382,9 +1381,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField37ActionPerformed
 
-    private void jTextField59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField59ActionPerformed
+    private void campoPuntuacionLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPuntuacionLibroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField59ActionPerformed
+    }//GEN-LAST:event_campoPuntuacionLibroActionPerformed
 
     private void comboBoxAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxAutoresActionPerformed
         // TODO add your handling code here:
@@ -1461,20 +1460,60 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         return listGeneros;
     }
 
+    public JTextField getCampoAnioPublicacionLibro() {
+        return campoAnioPublicacionLibro;
+    }
+
+    public JTextField getCampoEdicionLibro() {
+        return campoEdicionLibro;
+    }
+
+    public JTextField getCampoEditorialLibro() {
+        return campoEditorialLibro;
+    }
+
+    public JTextField getCampoIdiomaLibro() {
+        return campoIdiomaLibro;
+    }
+
+    public JTextField getCampoIsbnLibro() {
+        return campoIsbnLibro;
+    }
+
+    public JTextField getCampoPuntuacionLibro() {
+        return campoPuntuacionLibro;
+    }
+
+    public JTextField getCampoTituloLibro() {
+        return campoTituloLibro;
+    }
+
+    public JTextField getCampoVolumenLibro() {
+        return campoVolumenLibro;
+    }
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarAutor;
     private javax.swing.JButton btnGuardarIlustrador;
+    private javax.swing.JButton btnGuardarLibro;
     private javax.swing.JButton btnGuardarTraductor;
+    private javax.swing.JTextField campoAnioPublicacionLibro;
+    private javax.swing.JTextField campoEdicionLibro;
+    private javax.swing.JTextField campoEditorialLibro;
     private javax.swing.JTextField campoFecha;
+    private javax.swing.JTextField campoIdiomaLibro;
+    private javax.swing.JTextField campoIsbnLibro;
     private javax.swing.JTextField campoNacionalidad;
     private javax.swing.JTextField campoNombre;
+    private javax.swing.JTextField campoPuntuacionLibro;
+    private javax.swing.JTextField campoTituloLibro;
+    private javax.swing.JTextField campoVolumenLibro;
     private javax.swing.JComboBox<String> comboBoxAutores;
     private javax.swing.JComboBox<String> comboBoxIlustradores;
     private javax.swing.JComboBox<String> comboBoxTraductores;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1556,14 +1595,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField48;
-    private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField51;
-    private javax.swing.JTextField jTextField54;
-    private javax.swing.JTextField jTextField55;
-    private javax.swing.JTextField jTextField57;
-    private javax.swing.JTextField jTextField58;
-    private javax.swing.JTextField jTextField59;
     private javax.swing.JList<String> listGeneros;
     // End of variables declaration//GEN-END:variables
 }
