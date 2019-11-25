@@ -48,11 +48,15 @@ public class EstadisticaDB {
         int retorno = 0;
         Conexion conexion = new Conexion();
         try{
-            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("INSERT INTO Estadistica(Calificacion) VALUES (?)");
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("INSERT INTO Estadistica(Calificacion) VALUES (?)",java.sql.Statement.RETURN_GENERATED_KEYS);
             preparedStmt.setString(1,estadistica.getCalificacion());
             if(!preparedStmt.execute()){
                 retorno = -1;
             }                        
+            ResultSet rs = preparedStmt.getGeneratedKeys();
+            if(rs.next()){
+                estadistica.setId(rs.getInt(1));
+            }            
         }catch(SQLException ex){
             ex.printStackTrace();
         }

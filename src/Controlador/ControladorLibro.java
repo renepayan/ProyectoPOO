@@ -6,17 +6,25 @@
 package Controlador;
 
 import Logica.Autor;
+import Logica.Editorial;
+import Logica.Estadistica;
+import Logica.GeneroLiterario;
 import Logica.Ilustrador;
 import Logica.Libro;
 import Logica.Traductor;
 import Persistencia.AutorDB;
+import Persistencia.EditorialDB;
+import Persistencia.EstadisticaDB;
+import Persistencia.GeneroLiterarioDB;
 import Persistencia.IlustradorDB;
 import Persistencia.LibroDB;
 import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JList;
 
 /**
  *
@@ -31,8 +39,20 @@ public class ControladorLibro {
         Libro libro = new Libro(jframe.getCampoTituloLibro().getText(),
                 Integer.parseInt(jframe.getCampoAnioPublicacionLibro().getText()),jframe.getCampoIsbnLibro().getText(),
                 jframe.getCampoEdicionLibro().getText(),jframe.getCampoVolumenLibro().getText(),jframe.getCampoIdiomaLibro().getText());        
-        LibroDB adb = new LibroDB();
-        adb.addLibro(libro);        
+        LibroDB ldb = new LibroDB();
+        EditorialDB edb = new EditorialDB();        
+        AutorDB adb = new AutorDB();
+        libro.setEditorial(edb.getEditorialByName((String) jframe.getCampoEditorialLibro().getSelectedItem()));
+        Autor[] autores = new Autor[1];                 
+        autores[0] = adb.getAutorByName((String)jframe.getComboBoxAutores().getSelectedItem());        
+        libro.setAutor(autores);
+        EstadisticaDB e1db = new EstadisticaDB();
+        Estadistica estadistica = new Estadistica(0, "100", null);
+        System.out.println(estadistica.getId()+"");
+        e1db.addEstadistica(estadistica);
+        libro.setEstadistica(estadistica);
+        ldb.addLibro(libro);        
+        
     }
     public void ponerAutores(){
         JComboBox jcombo= jframe.getComboBoxAutores();
@@ -62,5 +82,35 @@ public class ControladorLibro {
             jcombo.addItem(traductor.getNombre());
         }
         jcombo.addItem("Desconocido");
+    }
+    public void ponerEditoriales(){
+        JComboBox jcombo = jframe.getCampoEditorialLibro();
+        jcombo.removeAllItems();
+        EditorialDB edb = new EditorialDB();
+        List<Editorial> editoriales = edb.getEditoriales();
+        for(Editorial editorial: editoriales){
+            jcombo.addItem(editorial.getNombre());
+        }
+        jcombo.addItem("Desconocido");        
+    }
+    public void ponerGeneros(){
+        JList<String> jlist = jframe.getListGeneros();
+        jlist.removeAll();
+        GeneroLiterarioDB gdb = new GeneroLiterarioDB();
+        List<GeneroLiterario> generos = gdb.getGeneros();                
+        int i = 1;
+        for(GeneroLiterario genero: generos){            
+            i++;
+        }        
+        String[] test = new String[i];
+        i = 0;
+        for(GeneroLiterario genero: generos){
+            test[i++] = genero.getNombre();
+        }
+        test[i] = "Desconocido";
+        jlist.setModel(new javax.swing.AbstractListModel<String>() {            
+            public int getSize() { return test.length; }
+            public String getElementAt(int i) { return test[i]; }
+        });
     }
 }

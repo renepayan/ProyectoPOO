@@ -12,6 +12,8 @@ import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -57,4 +59,21 @@ public class GeneroLiterarioDB {
         conexion.cerrar();
         return retorno;
     }   
+    public List<GeneroLiterario> getGeneros(){
+        List<GeneroLiterario> generos = new ArrayList<GeneroLiterario>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM GeneroLiterario");
+            ResultSet rs = preparedStmt.executeQuery();
+            while(rs.next()){
+                generos.add(new GeneroLiterario(
+                        rs.getString("Nombre")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return generos;
+    }
 }

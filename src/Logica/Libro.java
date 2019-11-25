@@ -69,18 +69,18 @@ public class Libro {
     public GeneroLiterario[] getGeneros() {
         return generos;
     }
-    private String titulo;
-    private int anioDePublicacion;
-    private String isbn;
-    private Autor autor[];
+    private String titulo; //Ya
+    private int anioDePublicacion; //Ya
+    private String isbn; //Ya
+    private Autor autor[];  //Ya
     private Ilustrador ilustrador;
     private Traductor traductor;
-    private String edicion;
-    private String volumen;
-    private String idioma;
-    private Miniatura portada, contraPortada;
-    private Editorial editorial;
-    private Estadistica estadistica;
+    private String edicion; //Ya
+    private String volumen; //Ya
+    private String idioma; //Ya
+    private Miniatura portada, contraPortada; //No
+    private Editorial editorial; //Ya
+    private Estadistica estadistica; //Ya
     private GeneroLiterario generos[];
 
     public Libro (){

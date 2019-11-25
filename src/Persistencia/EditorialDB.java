@@ -12,6 +12,8 @@ import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -59,4 +61,22 @@ public class EditorialDB {
         conexion.cerrar();
         return retorno;
     }   
+    public List<Editorial> getEditoriales(){
+        List<Editorial> editoriales = new ArrayList<Editorial>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Editorial");
+            ResultSet rs = preparedStmt.executeQuery();
+            while(rs.next()){
+                editoriales.add(new Editorial(
+                        rs.getString("Nombre"),
+                        rs.getString("Pais")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return editoriales;
+    }
 }
