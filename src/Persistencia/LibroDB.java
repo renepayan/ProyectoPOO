@@ -5,6 +5,7 @@
  */
 package Persistencia;
 
+import Logica.GeneroLiterario;
 import Logica.Libro;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,6 +37,10 @@ public class LibroDB {
                 MiniaturaDB mdb = new MiniaturaDB();
                 libro.setPortada(mdb.getMiniaturaById(rs.getInt("Portada")));
                 libro.setContraPortada(mdb.getMiniaturaById(rs.getInt("ContraPortada")));
+                GeneroLiterarioDB gdb = new GeneroLiterarioDB();
+                List<GeneroLiterario> generos = gdb.getGenerosByLibro(libro);
+                GeneroLiterario[] arrGeneros = new GeneroLiterario[generos.size()];
+                libro.setGeneros(arrGeneros);
             }
         }catch(SQLException ex){
             ex.printStackTrace();
@@ -47,17 +52,11 @@ public class LibroDB {
         List<Libro> libros = new ArrayList<Libro>();
         Conexion conexion = new Conexion();
         try{
-            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro WHERE Titulo LIKE '%?%' ");            
-            preparedStmt.setString(1,search);
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro WHERE Titulo LIKE ? ");            
+            preparedStmt.setString(1,"%"+search+"%");
             ResultSet rs = preparedStmt.executeQuery();           
             while(rs.next()){
-                libros.add(new Libro(rs.getString("Titulo"),
-                        rs.getInt("AnioPublicacion"),
-                        rs.getString("ISBN"),
-                        rs.getString("Edicion"),
-                        rs.getString("Volumen"),
-                        rs.getString("Idioma")
-                ));
+                libros.add(getLibroByIsbn(rs.getString("ISBN")));
             }
         }catch(SQLException ex){
             ex.printStackTrace();
@@ -121,5 +120,4 @@ public class LibroDB {
        
        return retorno;
    }
-    
 }

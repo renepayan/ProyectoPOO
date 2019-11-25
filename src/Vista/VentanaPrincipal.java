@@ -8,6 +8,11 @@ package Vista;
 import Controlador.ControladorAutor;
 import Controlador.ControladorBusqueda;
 import Controlador.ControladorLibro;
+import Logica.Autor;
+import Logica.Ilustrador;
+import Logica.Libro;
+import Logica.Traductor;
+import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -21,6 +26,102 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    public JTextField getInfoLibroAnio() {
+        return infoLibroAnio;
+    }
+
+    public void setInfoLibroAnio(JTextField infoLibroAnio) {
+        this.infoLibroAnio = infoLibroAnio;
+    }
+
+    public JTextField getInfoLibroAutor() {
+        return infoLibroAutor;
+    }
+
+    public void setInfoLibroAutor(JTextField infoLibroAutor) {
+        this.infoLibroAutor = infoLibroAutor;
+    }
+
+    public JTextField getInfoLibroEdicion() {
+        return infoLibroEdicion;
+    }
+
+    public void setInfoLibroEdicion(JTextField infoLibroEdicion) {
+        this.infoLibroEdicion = infoLibroEdicion;
+    }
+
+    public JTextField getInfoLibroEditorial() {
+        return infoLibroEditorial;
+    }
+
+    public void setInfoLibroEditorial(JTextField infoLibroEditorial) {
+        this.infoLibroEditorial = infoLibroEditorial;
+    }
+
+    public JTextField getInfoLibroGeneros() {
+        return infoLibroGeneros;
+    }
+
+    public void setInfoLibroGeneros(JTextField infoLibroGeneros) {
+        this.infoLibroGeneros = infoLibroGeneros;
+    }
+
+    public JTextField getInfoLibroISBN() {
+        return infoLibroISBN;
+    }
+
+    public void setInfoLibroISBN(JTextField infoLibroISBN) {
+        this.infoLibroISBN = infoLibroISBN;
+    }
+
+    public JTextField getInfoLibroIdioma() {
+        return infoLibroIdioma;
+    }
+
+    public void setInfoLibroIdioma(JTextField infoLibroIdioma) {
+        this.infoLibroIdioma = infoLibroIdioma;
+    }
+
+    public JTextField getInfoLibroIlustrador() {
+        return infoLibroIlustrador;
+    }
+
+    public void setInfoLibroIlustrador(JTextField infoLibroIlustrador) {
+        this.infoLibroIlustrador = infoLibroIlustrador;
+    }
+
+    public JTextField getInfoLibroPuntuacion() {
+        return infoLibroPuntuacion;
+    }
+
+    public void setInfoLibroPuntuacion(JTextField infoLibroPuntuacion) {
+        this.infoLibroPuntuacion = infoLibroPuntuacion;
+    }
+
+    public JTextField getInfoLibroTitulo() {
+        return infoLibroTitulo;
+    }
+
+    public void setInfoLibroTitulo(JTextField infoLibroTitulo) {
+        this.infoLibroTitulo = infoLibroTitulo;
+    }
+
+    public JTextField getInfoLibroTraductor() {
+        return infoLibroTraductor;
+    }
+
+    public void setInfoLibroTraductor(JTextField infoLibroTraductor) {
+        this.infoLibroTraductor = infoLibroTraductor;
+    }
+
+    public JTextField getInfoLibroVolumen() {
+        return infoLibroVolumen;
+    }
+
+    public void setInfoLibroVolumen(JTextField infoLibroVolumen) {
+        this.infoLibroVolumen = infoLibroVolumen;
+    }
+
     /**
      * Creates new form VentanaPrincipal
      */
@@ -28,6 +129,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private ControladorAutor ca;
     private ControladorBusqueda cb;
     
+    private List<Autor> autores;
+    private List<Ilustrador> ilustradores;
+    private List<Libro> libros;
+    private List<Traductor> traductores;
+    public void setAutores(List<Autor>autores){
+        this.autores = autores;
+    }
+    public void setIlustradores(List<Ilustrador>ilustradores){
+        this.ilustradores = ilustradores;
+    }
+    public void setLibros(List<Libro> libros){
+        this.libros = libros;
+    }
+    public void setTraductores(List<Traductor> traductores){
+        this.traductores = traductores;
+    }
     public VentanaPrincipal() {
         initComponents();
         cl = new ControladorLibro(this);
@@ -58,30 +175,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
+        infoLibroTitulo = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
+        infoLibroAnio = new javax.swing.JTextField();
+        infoLibroAutor = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jTextField29 = new javax.swing.JTextField();
+        infoLibroISBN = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
+        infoLibroIlustrador = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
+        infoLibroTraductor = new javax.swing.JTextField();
+        infoLibroIdioma = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jTextField33 = new javax.swing.JTextField();
+        infoLibroEditorial = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
+        infoLibroGeneros = new javax.swing.JTextField();
+        infoLibroEdicion = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
+        infoLibroVolumen = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
-        jTextField37 = new javax.swing.JTextField();
+        infoLibroPuntuacion = new javax.swing.JTextField();
         jPanel16 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
@@ -154,6 +271,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         listAutores = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listIlustradores = new javax.swing.JList<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        listTraductores = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -213,24 +334,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel32.setText("Titulo");
 
-        jTextField26.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField26ActionPerformed(evt);
+                infoLibroTituloActionPerformed(evt);
             }
         });
 
         jLabel33.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel33.setText("Autor(es)");
 
-        jTextField27.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField27ActionPerformed(evt);
+                infoLibroAnioActionPerformed(evt);
             }
         });
 
-        jTextField28.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField28ActionPerformed(evt);
+                infoLibroAutorActionPerformed(evt);
             }
         });
 
@@ -240,33 +361,33 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel35.setText("ISBN");
 
-        jTextField29.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroISBN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField29ActionPerformed(evt);
+                infoLibroISBNActionPerformed(evt);
             }
         });
 
         jLabel36.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel36.setText("Ilustrador");
 
-        jTextField30.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroIlustrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField30ActionPerformed(evt);
+                infoLibroIlustradorActionPerformed(evt);
             }
         });
 
         jLabel37.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel37.setText("Traductor");
 
-        jTextField31.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroTraductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField31ActionPerformed(evt);
+                infoLibroTraductorActionPerformed(evt);
             }
         });
 
-        jTextField32.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroIdioma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField32ActionPerformed(evt);
+                infoLibroIdiomaActionPerformed(evt);
             }
         });
 
@@ -276,24 +397,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel39.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel39.setText("Editorial");
 
-        jTextField33.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroEditorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField33ActionPerformed(evt);
+                infoLibroEditorialActionPerformed(evt);
             }
         });
 
         jLabel40.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel40.setText("Genero(s)");
 
-        jTextField34.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroGeneros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField34ActionPerformed(evt);
+                infoLibroGenerosActionPerformed(evt);
             }
         });
 
-        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroEdicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField35ActionPerformed(evt);
+                infoLibroEdicionActionPerformed(evt);
             }
         });
 
@@ -303,9 +424,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel42.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel42.setText("Idioma");
 
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroVolumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
+                infoLibroVolumenActionPerformed(evt);
             }
         });
 
@@ -321,9 +442,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Candara Light", 1, 14)); // NOI18N
         jLabel45.setText("Puntuacion");
 
-        jTextField37.addActionListener(new java.awt.event.ActionListener() {
+        infoLibroPuntuacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField37ActionPerformed(evt);
+                infoLibroPuntuacionActionPerformed(evt);
             }
         });
 
@@ -338,30 +459,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel34)
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(infoLibroAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel32)
-                                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(infoLibroTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel33)
-                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infoLibroAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel35)
-                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infoLibroISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel36)
-                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infoLibroIlustrador, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel38)
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(infoLibroVolumen, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel41)
-                                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(infoLibroEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel42)
-                            .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infoLibroIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel39)
-                            .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(infoLibroEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel40)
-                            .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infoLibroGeneros, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jButton6)
@@ -371,11 +492,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel37)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infoLibroTraductor, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel45)
-                            .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infoLibroPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25))))
         );
         jPanel15Layout.setVerticalGroup(
@@ -386,53 +507,53 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel32)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(infoLibroIlustrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel41)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroVolumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel42)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoLibroEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(infoLibroGeneros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel37)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(infoLibroTraductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel45)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(infoLibroPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
@@ -764,7 +885,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel72))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnGuardarLibro)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addComponent(campoPuntuacionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -980,7 +1101,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         tabbedPane.addTab("Ver Autor/ Ilustrador/ Traductor", jPanel11);
@@ -1142,7 +1263,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         tabbedPane.addTab("Ingresar Autor/ Ilustrador/ Traductor", jPanel19);
@@ -1185,6 +1306,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         jList1.setToolTipText("");
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList1ValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         jPanel18.setBackground(new java.awt.Color(13, 13, 13));
@@ -1241,6 +1367,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(listAutores);
 
+        listIlustradores.setBackground(new java.awt.Color(242, 226, 206));
+        listIlustradores.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        listIlustradores.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listIlustradores.setToolTipText("");
+        listIlustradores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listIlustradoresValueChanged(evt);
+            }
+        });
+        jScrollPane4.setViewportView(listIlustradores);
+
+        listTraductores.setBackground(new java.awt.Color(242, 226, 206));
+        listTraductores.setFont(new java.awt.Font("Candara Light", 1, 18)); // NOI18N
+        listTraductores.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listTraductores.setToolTipText("");
+        listTraductores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listTraductoresValueChanged(evt);
+            }
+        });
+        jScrollPane5.setViewportView(listTraductores);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -1250,8 +1406,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane5))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1262,9 +1421,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -1274,15 +1438,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1319,45 +1484,45 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
+    private void infoLibroTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroTituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField26ActionPerformed
+    }//GEN-LAST:event_infoLibroTituloActionPerformed
 
-    private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
+    private void infoLibroAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroAnioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField27ActionPerformed
+    }//GEN-LAST:event_infoLibroAnioActionPerformed
 
-    private void jTextField29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField29ActionPerformed
+    private void infoLibroISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroISBNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField29ActionPerformed
+    }//GEN-LAST:event_infoLibroISBNActionPerformed
 
-    private void jTextField30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField30ActionPerformed
+    private void infoLibroIlustradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroIlustradorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField30ActionPerformed
+    }//GEN-LAST:event_infoLibroIlustradorActionPerformed
 
-    private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
+    private void infoLibroTraductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroTraductorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField31ActionPerformed
+    }//GEN-LAST:event_infoLibroTraductorActionPerformed
 
-    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
+    private void infoLibroIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroIdiomaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField32ActionPerformed
+    }//GEN-LAST:event_infoLibroIdiomaActionPerformed
 
-    private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
+    private void infoLibroEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroEditorialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField33ActionPerformed
+    }//GEN-LAST:event_infoLibroEditorialActionPerformed
 
-    private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
+    private void infoLibroGenerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroGenerosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField34ActionPerformed
+    }//GEN-LAST:event_infoLibroGenerosActionPerformed
 
-    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
+    private void infoLibroEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroEdicionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35ActionPerformed
+    }//GEN-LAST:event_infoLibroEdicionActionPerformed
 
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    private void infoLibroVolumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroVolumenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_infoLibroVolumenActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -1439,9 +1604,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+    private void infoLibroPuntuacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroPuntuacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField37ActionPerformed
+    }//GEN-LAST:event_infoLibroPuntuacionActionPerformed
 
     private void campoPuntuacionLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPuntuacionLibroActionPerformed
         // TODO add your handling code here:
@@ -1451,9 +1616,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxAutoresActionPerformed
 
-    private void jTextField28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField28ActionPerformed
+    private void infoLibroAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoLibroAutorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField28ActionPerformed
+    }//GEN-LAST:event_infoLibroAutorActionPerformed
 
     private void comboBoxIlustradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxIlustradoresActionPerformed
         // TODO add your handling code here:
@@ -1472,11 +1637,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoBusquedaActionPerformed
 
     private void listAutoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listAutoresValueChanged
-        tabbedPane.setSelectedIndex(3);
-        String seleccion = listAutores.getSelectedValue();        
-        cb.ponerAutorSeleccionado(seleccion);
+        tabbedPane.setSelectedIndex(3);        
+        cb.ponerObjetoDeLista(autores.get(listAutores.getSelectedIndex()));
+        listAutores.clearSelection();
     }//GEN-LAST:event_listAutoresValueChanged
 
+    private void listIlustradoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listIlustradoresValueChanged
+        tabbedPane.setSelectedIndex(3);        
+        cb.ponerObjetoDeLista(ilustradores.get(listIlustradores.getSelectedIndex()));
+        listIlustradores.clearSelection();
+    }//GEN-LAST:event_listIlustradoresValueChanged
+
+    private void listTraductoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listTraductoresValueChanged
+        tabbedPane.setSelectedIndex(3);        
+        cb.ponerObjetoDeLista(traductores.get(listTraductores.getSelectedIndex()));
+        listTraductores.clearSelection();
+    }//GEN-LAST:event_listTraductoresValueChanged
+
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        tabbedPane.setSelectedIndex(0);        
+        cb.ponerObjetoDeLista(libros.get(jList1.getSelectedIndex()));
+        listIlustradores.clearSelection();
+    }//GEN-LAST:event_jList1ValueChanged
+    public JList getListLibros(){
+        return jList1;
+    }
+    public JList getListIlustradores(){
+        return listIlustradores;
+    }
+    public JList getListTraductores(){
+        return listTraductores;
+    }
     /**
      * @param args the command line arguments
      */
@@ -1600,6 +1791,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboBoxAutores;
     private javax.swing.JComboBox<String> comboBoxIlustradores;
     private javax.swing.JComboBox<String> comboBoxTraductores;
+    private javax.swing.JTextField infoLibroAnio;
+    private javax.swing.JTextField infoLibroAutor;
+    private javax.swing.JTextField infoLibroEdicion;
+    private javax.swing.JTextField infoLibroEditorial;
+    private javax.swing.JTextField infoLibroGeneros;
+    private javax.swing.JTextField infoLibroISBN;
+    private javax.swing.JTextField infoLibroIdioma;
+    private javax.swing.JTextField infoLibroIlustrador;
+    private javax.swing.JTextField infoLibroPuntuacion;
+    private javax.swing.JTextField infoLibroTitulo;
+    private javax.swing.JTextField infoLibroTraductor;
+    private javax.swing.JTextField infoLibroVolumen;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton13;
@@ -1668,24 +1871,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
     private javax.swing.JLabel labelPathArchivo;
     private javax.swing.JList<String> listAutores;
     private javax.swing.JList<String> listGeneros;
+    private javax.swing.JList<String> listIlustradores;
+    private javax.swing.JList<String> listTraductores;
     private javax.swing.JTabbedPane tabbedPane;
     // End of variables declaration//GEN-END:variables
 }

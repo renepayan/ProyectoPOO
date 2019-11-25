@@ -7,9 +7,11 @@ package Controlador;
 
 import Logica.Autor;
 import Logica.Ilustrador;
+import Logica.Libro;
 import Logica.Traductor;
 import Persistencia.AutorDB;
 import Persistencia.IlustradorDB;
+import Persistencia.LibroDB;
 import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import java.util.List;
@@ -38,22 +40,66 @@ public class ControladorBusqueda {
         List<Ilustrador> ilustradores = idb.getIlustradoresBySearch(busqueda);
         List<Traductor> traductores = tdb.getTraductoresBySearch(busqueda);
         for(Autor autor: autores){
-            modelo.addElement("Autor    "+autor.getNombre());
-        }        
-        for(Ilustrador ilustrador: ilustradores){
-            modelo.addElement("Ilustrador   "+ilustrador.getNombre());
-        }        
-        for(Traductor traductor: traductores){
-            modelo.addElement("Traductor    "+traductor.getNombre());
+            modelo.addElement(autor.getNombre());
         }        
         lista.setModel(modelo);                
+        lista = jframe.getListIlustradores();
+        modelo = new DefaultListModel();
+        for(Ilustrador ilustrador: ilustradores){
+            modelo.addElement(ilustrador.getNombre());           
+        }        
+        lista.setModel(modelo);              
+        lista = jframe.getListTraductores();
+        modelo = new DefaultListModel();
+        for(Traductor traductor: traductores){
+            modelo.addElement(traductor.getNombre());
+        }                
+        lista.setModel(modelo);              
+        jframe.setAutores(autores);
+        jframe.setIlustradores(ilustradores);
+        jframe.setTraductores(traductores);
+        //Aqui van los libros osi osi
+        LibroDB ldb = new LibroDB();
+        List<Libro> libros = ldb.getLibrosBySearch(busqueda);
+        jframe.setLibros(libros);
+        modelo = new DefaultListModel();
+        for(Libro libro: libros){
+            modelo.addElement(libro.getTitulo());
+        }
+        JList lista2 = jframe.getListLibros();
+        lista2.setModel(modelo);
     }
     
-    public void ponerAutorSeleccionado(String nombre){//nombre = "Autor    Isaac Asimov"
-        AutorDB adb = new AutorDB();
-        Autor autor = adb.getAutorByName(nombre);
+    public void ponerObjetoDeLista(Object objeto){
+        if(objeto instanceof Autor){
+            ponerAutorSeleccionado((Autor)objeto);
+        }else if(objeto instanceof Ilustrador){
+            ponerIlustradorSeleccionado((Ilustrador)objeto);
+        }else if(objeto instanceof Libro){
+            ponerLibroSeleccionado((Libro)objeto);
+        }else{
+            ponerTraductorSeleccionado((Traductor)objeto);
+        }
+    }
+    public void ponerLibroSeleccionado(Libro libro){
+        jframe.getInfoLibroVolumen().setText(libro.getVolumen());
+        jframe.getInfoLibroTitulo().setText(libro.getTitulo());
+        jframe.getInfoLibroISBN().setText(libro.getIsbn());
+        jframe.getInfoLibroEdicion().setText(libro.getEdicion());
+        jframe.getInfoLibroEditorial().setText(libro.getEditorial().getNombre());
+        jframe.getInfoLibroPuntuacion().setText(libro.getEstadistica().getCalificacion());
+        
+    }
+    public void ponerAutorSeleccionado(Autor autor){//nombre = "Autor    Isaac Asimov"        
         jframe.getCampoNombre().setText(autor.getNombre());
         jframe.getCampoFecha().setText(autor.getFechaNacimiento());
         jframe.getCampoNacionalidad().setText(autor.getNacionalidad());
+    }
+    public void ponerTraductorSeleccionado(Traductor traductor){//nombre = "Autor    Isaac Asimov"        
+        jframe.getCampoNombre().setText(traductor.getNombre());        
+        jframe.getCampoNacionalidad().setText(traductor.getNacionalidad());
+    }
+    public void ponerIlustradorSeleccionado(Ilustrador ilustrador){
+        jframe.getCampoNombre().setText(ilustrador.getNombre());                
     }
 }

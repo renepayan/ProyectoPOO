@@ -43,17 +43,18 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="tabbedPane" min="-2" pref="707" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="tabbedPane" min="-2" pref="497" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
+                  <Component id="tabbedPane" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,35 +186,35 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="jTextField27" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                                              <Component id="infoLibroAnio" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField26" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                                  <Component id="infoLibroTitulo" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField28" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroAutor" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                           <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField29" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroISBN" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                           <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField30" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroIlustrador" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="44" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="jTextField36" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                                              <Component id="infoLibroVolumen" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField35" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                                  <Component id="infoLibroEdicion" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField32" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroIdioma" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                           <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField33" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroEditorial" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                           <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField34" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroGeneros" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
@@ -226,12 +227,12 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField31" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroTraductor" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField37" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                                          <Component id="infoLibroPuntuacion" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
@@ -247,44 +248,44 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField26" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroTitulo" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField27" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroAnio" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField28" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroAutor" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField29" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroISBN" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField30" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroIlustrador" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField35" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroEdicion" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField36" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroVolumen" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField32" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroIdioma" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField33" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroEditorial" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField34" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroGeneros" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -292,12 +293,12 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField31" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroTraductor" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField37" min="-2" max="-2" attributes="0"/>
+                                      <Component id="infoLibroPuntuacion" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -333,9 +334,9 @@
                         <Property name="text" type="java.lang.String" value="Titulo"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField26">
+                    <Component class="javax.swing.JTextField" name="infoLibroTitulo">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField26ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroTituloActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel33">
@@ -346,14 +347,14 @@
                         <Property name="text" type="java.lang.String" value="Autor(es)"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField27">
+                    <Component class="javax.swing.JTextField" name="infoLibroAnio">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField27ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroAnioActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField28">
+                    <Component class="javax.swing.JTextField" name="infoLibroAutor">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField28ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroAutorActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel34">
@@ -372,9 +373,9 @@
                         <Property name="text" type="java.lang.String" value="ISBN"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField29">
+                    <Component class="javax.swing.JTextField" name="infoLibroISBN">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField29ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroISBNActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel36">
@@ -385,9 +386,9 @@
                         <Property name="text" type="java.lang.String" value="Ilustrador"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField30">
+                    <Component class="javax.swing.JTextField" name="infoLibroIlustrador">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField30ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroIlustradorActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel37">
@@ -398,14 +399,14 @@
                         <Property name="text" type="java.lang.String" value="Traductor"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField31">
+                    <Component class="javax.swing.JTextField" name="infoLibroTraductor">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField31ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroTraductorActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField32">
+                    <Component class="javax.swing.JTextField" name="infoLibroIdioma">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField32ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroIdiomaActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel38">
@@ -424,9 +425,9 @@
                         <Property name="text" type="java.lang.String" value="Editorial"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField33">
+                    <Component class="javax.swing.JTextField" name="infoLibroEditorial">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField33ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroEditorialActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel40">
@@ -437,14 +438,14 @@
                         <Property name="text" type="java.lang.String" value="Genero(s)"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField34">
+                    <Component class="javax.swing.JTextField" name="infoLibroGeneros">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField34ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroGenerosActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField35">
+                    <Component class="javax.swing.JTextField" name="infoLibroEdicion">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField35ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroEdicionActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel41">
@@ -463,9 +464,9 @@
                         <Property name="text" type="java.lang.String" value="Idioma"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField36">
+                    <Component class="javax.swing.JTextField" name="infoLibroVolumen">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField36ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroVolumenActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton13">
@@ -490,9 +491,9 @@
                         <Property name="text" type="java.lang.String" value="Puntuacion"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField37">
+                    <Component class="javax.swing.JTextField" name="infoLibroPuntuacion">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField37ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoLibroPuntuacionActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -807,7 +808,7 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="btnGuardarLibro" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="26" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -1146,7 +1147,7 @@
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="291" max="32767" attributes="0"/>
+                          <EmptySpace pref="317" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1394,7 +1395,7 @@
                           <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="291" max="32767" attributes="0"/>
+                          <EmptySpace pref="317" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1631,8 +1632,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="281" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane4" pref="385" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1645,9 +1650,15 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel18" max="32767" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="377" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="377" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jScrollPane3" min="-2" pref="116" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" min="-2" pref="116" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane5" min="-2" pref="116" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1741,6 +1752,9 @@
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jList1ValueChanged"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -1842,6 +1856,96 @@
                       </Properties>
                       <Events>
                         <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="listAutoresValueChanged"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="listIlustradores">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ce" green="e2" red="f2" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Candara Light" size="18" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                          <StringArray count="15">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                            <StringItem index="4" value="Item 5"/>
+                            <StringItem index="5" value="Item 1"/>
+                            <StringItem index="6" value="Item 2"/>
+                            <StringItem index="7" value="Item 3"/>
+                            <StringItem index="8" value="Item 4"/>
+                            <StringItem index="9" value="Item 5"/>
+                            <StringItem index="10" value="Item 1"/>
+                            <StringItem index="11" value="Item 2"/>
+                            <StringItem index="12" value="Item 3"/>
+                            <StringItem index="13" value="Item 4"/>
+                            <StringItem index="14" value="Item 5"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="listIlustradoresValueChanged"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JList" name="listTraductores">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ce" green="e2" red="f2" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Candara Light" size="18" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                          <StringArray count="15">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                            <StringItem index="4" value="Item 5"/>
+                            <StringItem index="5" value="Item 1"/>
+                            <StringItem index="6" value="Item 2"/>
+                            <StringItem index="7" value="Item 3"/>
+                            <StringItem index="8" value="Item 4"/>
+                            <StringItem index="9" value="Item 5"/>
+                            <StringItem index="10" value="Item 1"/>
+                            <StringItem index="11" value="Item 2"/>
+                            <StringItem index="12" value="Item 3"/>
+                            <StringItem index="13" value="Item 4"/>
+                            <StringItem index="14" value="Item 5"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="listTraductoresValueChanged"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
