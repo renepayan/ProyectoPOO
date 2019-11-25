@@ -45,6 +45,26 @@ public class IlustradorDB {
         conexion.cerrar();
         return ilustrador;
     }
+    
+    public List<Ilustrador> getIlustradoresBySearch(String search){
+        List<Ilustrador> ilustradores = new ArrayList<Ilustrador>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Ilustrador WHERE Nombre LIKE ? ");            
+            preparedStmt.setString(1,"%"+search+"%");
+            ResultSet rs = preparedStmt.executeQuery();           
+            while(rs.next()){
+                ilustradores.add(new Ilustrador(
+                        rs.getString("Nombre")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return ilustradores;
+    }
+    
     public List<Ilustrador> getIlustradores(){
         List<Ilustrador> ilustradores = new ArrayList<Ilustrador>();
         Conexion conexion = new Conexion();

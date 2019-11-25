@@ -6,7 +6,11 @@
 package Controlador;
 
 import Logica.Autor;
+import Logica.Ilustrador;
+import Logica.Traductor;
 import Persistencia.AutorDB;
+import Persistencia.IlustradorDB;
+import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -27,10 +31,20 @@ public class ControladorBusqueda {
         JList lista = jframe.getListAutores();
         DefaultListModel modelo = new DefaultListModel();                
         AutorDB adb = new AutorDB();
+        IlustradorDB idb = new IlustradorDB();
+        TraductorDB tdb = new TraductorDB();
         
         List<Autor> autores = adb.getAutoresBySearch(busqueda);
+        List<Ilustrador> ilustradores = idb.getIlustradoresBySearch(busqueda);
+        List<Traductor> traductores = tdb.getTraductoresBySearch(busqueda);
         for(Autor autor: autores){
-            modelo.addElement(autor.getNombre());
+            modelo.addElement("Autor    "+autor.getNombre());
+        }        
+        for(Ilustrador ilustrador: ilustradores){
+            modelo.addElement("Ilustrador   "+ilustrador.getNombre());
+        }        
+        for(Traductor traductor: traductores){
+            modelo.addElement("Traductor    "+traductor.getNombre());
         }        
         lista.setModel(modelo);                
     }

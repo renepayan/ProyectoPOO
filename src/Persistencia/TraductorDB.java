@@ -46,6 +46,27 @@ public class TraductorDB {
         conexion.cerrar();
         return traductor;
     }
+    
+    public List<Traductor> getTraductoresBySearch(String search){
+        List<Traductor> traductores = new ArrayList<Traductor>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Traductor WHERE Nombre LIKE ? ");            
+            preparedStmt.setString(1,"%"+search+"%");
+            ResultSet rs = preparedStmt.executeQuery();           
+            while(rs.next()){
+                traductores.add(new Traductor(
+                    rs.getString("Nombre"),
+                    rs.getString("Nacionalidad")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return traductores;
+    }
+    
     public List<Traductor> getTraductores(){
         List<Traductor> traductores = new ArrayList<Traductor>();
         Conexion conexion = new Conexion();
