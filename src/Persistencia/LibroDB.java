@@ -9,6 +9,8 @@ import Logica.Libro;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -40,6 +42,28 @@ public class LibroDB {
         }
         conexion.cerrar();
         return libro;
+    }
+   public List<Libro> getLibrosBySearch(String search){
+        List<Libro> libros = new ArrayList<Libro>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro WHERE Titulo LIKE '%?%' ");            
+            preparedStmt.setString(1,search);
+            ResultSet rs = preparedStmt.executeQuery();           
+            while(rs.next()){
+                libros.add(new Libro(rs.getString("Titulo"),
+                        rs.getInt("AnioPublicacion"),
+                        rs.getString("ISBN"),
+                        rs.getString("Edicion"),
+                        rs.getString("Volumen"),
+                        rs.getString("Idioma")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return libros;
     }
    public int addLibro(Libro libro){
        int retorno = 0;

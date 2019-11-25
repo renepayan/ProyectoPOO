@@ -47,6 +47,27 @@ public class AutorDB {
         conexion.cerrar();
         return autor;
     }
+    
+    public List<Autor> getAutoresBySearch(String search){
+        List<Autor> autores = new ArrayList<Autor>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Autor WHERE Nombre LIKE ? ");            
+            preparedStmt.setString(1,"%"+search+"%");
+            ResultSet rs = preparedStmt.executeQuery();           
+            while(rs.next()){
+                autores.add(new Autor(rs.getString("Nombre"),
+                    rs.getString("Nacionalidad"),
+                    rs.getString("FechaNacimiento")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return autores;
+    }
+    
     public List<Autor> getAutores(){
         List<Autor> autores = new ArrayList<Autor>();
         Conexion conexion = new Conexion();
