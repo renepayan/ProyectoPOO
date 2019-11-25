@@ -24,9 +24,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    ControladorLibro cl;
-    ControladorAutor ca;
-    ControladorBusqueda cb;
+    private ControladorLibro cl;
+    private ControladorAutor ca;
+    private ControladorBusqueda cb;
+    
     public VentanaPrincipal() {
         initComponents();
         cl = new ControladorLibro(this);
@@ -49,7 +50,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        tabbedPane = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
@@ -490,7 +491,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Ver Libro", jPanel13);
+        tabbedPane.addTab("Ver Libro", jPanel13);
 
         jPanel23.setBackground(new java.awt.Color(59, 59, 64));
 
@@ -821,7 +822,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Ingresar Libro", jPanel23);
+        tabbedPane.addTab("Ingresar Libro", jPanel23);
 
         jPanel11.setBackground(new java.awt.Color(59, 59, 64));
 
@@ -979,10 +980,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Ver Autor/ Ilustrador/ Traductor", jPanel11);
+        tabbedPane.addTab("Ver Autor/ Ilustrador/ Traductor", jPanel11);
 
         jPanel19.setBackground(new java.awt.Color(59, 59, 64));
 
@@ -1141,10 +1142,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Ingresar Autor/ Ilustrador/ Traductor", jPanel19);
+        tabbedPane.addTab("Ingresar Autor/ Ilustrador/ Traductor", jPanel19);
 
         jPanel5.setBackground(new java.awt.Color(59, 59, 64));
 
@@ -1233,6 +1234,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         listAutores.setToolTipText("");
+        listAutores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listAutoresValueChanged(evt);
+            }
+        });
         jScrollPane3.setViewportView(listAutores);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -1262,20 +1268,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane2.addTab("Principal", jPanel5);
+        tabbedPane.addTab("Principal", jPanel5);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 16, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 27, Short.MAX_VALUE))
         );
 
@@ -1464,6 +1470,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void campoBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoBusquedaActionPerformed
+
+    private void listAutoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listAutoresValueChanged
+        tabbedPane.setSelectedIndex(3);
+        String seleccion = listAutores.getSelectedValue();        
+        cb.ponerAutorSeleccionado(seleccion);
+    }//GEN-LAST:event_listAutoresValueChanged
 
     /**
      * @param args the command line arguments
@@ -1656,7 +1668,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField26;
@@ -1675,5 +1686,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelPathArchivo;
     private javax.swing.JList<String> listAutores;
     private javax.swing.JList<String> listGeneros;
+    private javax.swing.JTabbedPane tabbedPane;
     // End of variables declaration//GEN-END:variables
 }

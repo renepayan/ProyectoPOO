@@ -48,4 +48,12 @@ public class ControladorBusqueda {
         }        
         lista.setModel(modelo);                
     }
+    
+    public void ponerAutorSeleccionado(String nombre){//nombre = "Autor    Isaac Asimov"
+        AutorDB adb = new AutorDB();
+        Autor autor = adb.getAutorByName(nombre);
+        jframe.getCampoNombre().setText(autor.getNombre());
+        jframe.getCampoFecha().setText(autor.getFechaNacimiento());
+        jframe.getCampoNacionalidad().setText(autor.getNacionalidad());
+    }
 }
