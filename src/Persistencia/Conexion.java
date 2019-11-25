@@ -35,7 +35,7 @@ public class Conexion {
         try {
             this.connection.close();
         } catch (SQLException ex) {
-            //poner mamadas de error
+             ex.printStackTrace();
         }
     }
 }
