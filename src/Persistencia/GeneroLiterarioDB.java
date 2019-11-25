@@ -2,6 +2,7 @@ package Persistencia;
 
 
 import Logica.GeneroLiterario;
+import Logica.Libro;
 import Logica.Miniatura;
 import java.io.File;
 import java.io.InputStream;
@@ -59,6 +60,22 @@ public class GeneroLiterarioDB {
         conexion.cerrar();
         return retorno;
     }   
+    public int linkGeneroToLibro(GeneroLiterario generoLiterario, Libro libro){
+        int retorno = 0;
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("INSERT INTO GeneroLibro(Genero, Libro) VALUES (?,?)");
+            preparedStmt.setString(1, generoLiterario.getNombre());
+            preparedStmt.setString(2, libro.getIsbn());
+            if(!preparedStmt.execute()){
+                retorno = -1;
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return retorno;
+    }
     public List<GeneroLiterario> getGeneros(){
         List<GeneroLiterario> generos = new ArrayList<GeneroLiterario>();
         Conexion conexion = new Conexion();

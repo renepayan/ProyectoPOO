@@ -52,7 +52,10 @@ public class ControladorLibro {
         e1db.addEstadistica(estadistica);
         libro.setEstadistica(estadistica);
         ldb.addLibro(libro);        
-        
+        GeneroLiterarioDB gdb = new GeneroLiterarioDB();
+        for(String str: jframe.getListGeneros().getSelectedValuesList()){
+            gdb.linkGeneroToLibro(gdb.getGeneroLiterarioByName(str), libro);
+        }
     }
     public void ponerAutores(){
         JComboBox jcombo= jframe.getComboBoxAutores();
