@@ -13,6 +13,7 @@ import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -65,6 +66,46 @@ public class LibroElectronicoDB {
         }
         conexion.cerrar();
         return libroElectronico;
+    }
+    public List<LibroElectronico>getLibrosBySearch(String texto){
+        List<LibroElectronico> libros = new ArrayList<LibroElectronico>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement pstmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro AS L INNER JOIN LibroElectronico AS LE ON LE.Libro = L.ISBN WHERE L LIKE ?");
+            pstmt.setString(1,texto);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                List<GeneroLiterario> generos = new GeneroLiterarioDB().getGenerosByISBN(rs.getString("ISBN"));
+                GeneroLiterario[] generosarr = new GeneroLiterario[generos.size()];      
+                int i = 0;
+                for(GeneroLiterario gl: generos){
+                    generosarr[i++] = gl;
+                }
+                libros.add(new LibroElectronico(
+                    rs.getString("Ubicacion"),
+                    rs.getString("Extension"),
+                    rs.getFloat("Tamanio"),
+                    rs.getString("Titulo"),                    
+                    rs.getInt("AnioPublicacion"),
+                    rs.getString("ISBN"),
+                    new AutorDB().getAutorByName(rs.getString("Autor")),
+                    new IlustradorDB().getIlustradorByName(rs.getString("Ilustrador")),
+                    new TraductorDB().getTraductorByName(rs.getString("Traductor")),
+                    rs.getString("Edicion"),
+                    rs.getString("Volumen"),
+                    rs.getString("Idioma"),
+                    new MiniaturaDB().getMiniaturaById(rs.getInt("Portada")),
+                    new MiniaturaDB().getMiniaturaById(rs.getInt("ContraPortada")),
+                    new EditorialDB().getEditorialByName(rs.getString("Editorial")),
+                    new EstadisticaDB().getEstadisticaById(rs.getInt("Estadistica")),
+                    generosarr
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return libros;
     }
     public int addLibroElectronico(LibroElectronico libroElectronico){
         int retorno = 0;

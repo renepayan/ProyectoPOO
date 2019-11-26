@@ -149,4 +149,43 @@ public class LibroFisicoDB {
         conexion.cerrar();
         return retorno;
     }   
+    public List<LibroFisico>getLibrosBySearch(String texto){
+        List<LibroFisico> libros = new ArrayList<LibroFisico>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement pstmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro AS L INNER JOIN LibroFisico AS LE ON LE.Libro = L.ISBN WHERE L LIKE ?");
+            pstmt.setString(1,texto);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                List<GeneroLiterario> generos = new GeneroLiterarioDB().getGenerosByISBN(rs.getString("ISBN"));
+                GeneroLiterario[] generosarr = new GeneroLiterario[generos.size()];      
+                int i = 0;
+                for(GeneroLiterario gl: generos){
+                    generosarr[i++] = gl;
+                }
+                libros.add(new LibroFisico(
+                    rs.getString("LugarPublicacion"),
+                    rs.getString("NivelDeterioro"),                    
+                    rs.getString("Titulo"),                    
+                    rs.getInt("AnioPublicacion"),
+                    rs.getString("ISBN"),
+                    new AutorDB().getAutorByName(rs.getString("Autor")),
+                    new IlustradorDB().getIlustradorByName(rs.getString("Ilustrador")),
+                    new TraductorDB().getTraductorByName(rs.getString("Traductor")),
+                    rs.getString("Edicion"),
+                    rs.getString("Volumen"),
+                    rs.getString("Idioma"),
+                    new MiniaturaDB().getMiniaturaById(rs.getInt("Portada")),
+                    new MiniaturaDB().getMiniaturaById(rs.getInt("ContraPortada")),
+                    new EditorialDB().getEditorialByName(rs.getString("Editorial")),
+                    new EstadisticaDB().getEstadisticaById(rs.getInt("Estadistica")),
+                    generosarr
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return libros;
+    }
 }
