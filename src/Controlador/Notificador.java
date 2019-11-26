@@ -30,7 +30,7 @@ public class Notificador extends Thread {
 	}
 	private void esperarXsegundos(int segundos) {
 		try {
-			Thread.sleep(segundos * 1000);
+			Thread.sleep(segundos * 20);
 		} catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();
 		}
