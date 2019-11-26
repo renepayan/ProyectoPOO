@@ -17,7 +17,6 @@ import Persistencia.EditorialDB;
 import Persistencia.EstadisticaDB;
 import Persistencia.GeneroLiterarioDB;
 import Persistencia.IlustradorDB;
-import Persistencia.LibroDB;
 import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import java.util.List;

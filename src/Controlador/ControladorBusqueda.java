@@ -18,6 +18,7 @@ import Persistencia.LibroFisicoDB;
 
 import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
@@ -69,6 +70,13 @@ public class ControladorBusqueda {
         
         List<LibroFisico> librosF= lbF.getLibrosBySearch(busqueda);
         List<LibroElectronico> librosE = lbE.getLibrosBySearch(busqueda);
+        List<Libro> libros = new ArrayList<Libro>();
+        for(LibroFisico lf: librosF){
+            libros.add((Libro)lf);
+        }
+        for(LibroElectronico le: librosE){
+            libros.add((Libro)le);
+        }
         jframe.setLibros(libros);
         modelo = new DefaultListModel();
         for(Libro libro: libros){
