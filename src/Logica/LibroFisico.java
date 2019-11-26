@@ -5,7 +5,7 @@
  */
 package Logica;
 
-import Persistencia.LibroDB;
+
 import Persistencia.LibroElectronicoDB;
 import Persistencia.LibroFisicoDB;
 
@@ -17,8 +17,14 @@ public class LibroFisico extends Libro{
     private String lugarDePublicacion;
     private String nivelDeterioro;
 
-    public LibroFisico(String lugarDePublicacion, String nivelDeterioro, String titulo, int anioDePublicacion, String isbn, Autor autor, Ilustrador ilustrador, Traductor traductor, String edicion, String volumen, String idioma, Miniatura portada, Miniatura contraPortada, Editorial editorial, Estadistica estadistica, GeneroLiterario[] generos) {
-        super(titulo, anioDePublicacion, isbn, autor, ilustrador, traductor, edicion, volumen, idioma, portada, contraPortada, editorial, estadistica, generos);
+    public LibroFisico(String lugarDePublicacion, String nivelDeterioro, 
+            String titulo, int anioDePublicacion, String isbn, Autor autor,
+            Ilustrador ilustrador, Traductor traductor, String edicion,
+            String volumen, String idioma, Miniatura portada, Miniatura contraPortada,
+            Editorial editorial, Estadistica estadistica, GeneroLiterario[] generos) {
+        
+        super(titulo, anioDePublicacion, isbn, autor, ilustrador, traductor, 
+                edicion, volumen, idioma, portada, contraPortada, editorial, estadistica, generos);
         this.lugarDePublicacion = lugarDePublicacion;
         this.nivelDeterioro = nivelDeterioro;
     }

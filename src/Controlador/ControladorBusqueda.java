@@ -8,10 +8,14 @@ package Controlador;
 import Logica.Autor;
 import Logica.Ilustrador;
 import Logica.Libro;
+import Logica.LibroElectronico;
+import Logica.LibroFisico;
 import Logica.Traductor;
 import Persistencia.AutorDB;
 import Persistencia.IlustradorDB;
-import Persistencia.LibroDB;
+import Persistencia.LibroElectronicoDB;
+import Persistencia.LibroFisicoDB;
+
 import Persistencia.TraductorDB;
 import Vista.VentanaPrincipal;
 import java.util.List;
@@ -59,8 +63,12 @@ public class ControladorBusqueda {
         jframe.setIlustradores(ilustradores);
         jframe.setTraductores(traductores);
         //Aqui van los libros osi osi
-        LibroDB ldb = new LibroDB();
-        List<Libro> libros = ldb.getLibrosBySearch(busqueda);
+        LibroFisicoDB lbF = new LibroFisicoDB();
+        LibroElectronicoDB lbE = new LibroElectronicoDB();
+        
+        
+        List<LibroFisico> librosF= lbF.getLibrosBySearch(busqueda);
+        List<LibroElectronico> librosE = lbE.getLibrosBySearch(busqueda);
         jframe.setLibros(libros);
         modelo = new DefaultListModel();
         for(Libro libro: libros){

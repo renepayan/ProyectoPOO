@@ -3,7 +3,6 @@ package Persistencia;
 
 import Logica.GeneroLiterario;
 import Logica.LibroFisico;
-import Logica.LibroFisicoOld;
 import Logica.Miniatura;
 import java.io.File;
 import java.io.InputStream;
@@ -14,6 +13,7 @@ import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -27,14 +27,13 @@ import java.util.List;
  * @author payan
  */
 public class LibroFisicoDB {
-    public LibroFisicoOld getLibroFisicoByName(String isbn){
-        LibroFisicoOld libroFisico = null;
+    public LibroFisico getLibroFisicoByName(String isbn){
+        LibroFisico libroFisico = null;
         Conexion conexion = new Conexion();
         try{
             PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro AS L INNER JOIN LibroFisico AS LF ON LF.Libro = L.ISBN WHERE LF.Libro  = ? LIMIT 1");
             preparedStmt.setString(1,isbn);
-            ResultSet rs = preparedStmt.executeQuery();           
-            LibroDB ldb = new LibroDB();
+            ResultSet rs = preparedStmt.executeQuery();                       
             if(rs.next()){
                 List<GeneroLiterario> generos = new GeneroLiterarioDB().getGenerosByISBN(rs.getString("ISBN"));
                 GeneroLiterario[] generosarr = new GeneroLiterario[generos.size()];      
@@ -67,6 +66,48 @@ public class LibroFisicoDB {
         conexion.cerrar();
         return libroFisico;
     }
+    public List<LibroFisico> getLibrosFisicosBySearch(String search){
+        List<LibroFisico> libros = new ArrayList<LibroFisico>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM Libro AS L INNER JOIN LibroFisico AS LF ON LF.Libro = L.ISBN WHERE L.Titulo LIKE ? ");            
+            preparedStmt.setString(1,"%"+search+"%");
+            ResultSet rs = preparedStmt.executeQuery();           
+            while(rs.next()){
+                libros.add(getLibroFisicoByName(rs.getString("ISBN")));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return libros;
+    }
+    
+     public int updateLibro(LibroFisico libro){
+       int retorno = 0;
+       Conexion conexion = new Conexion();
+       try{
+           PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("UPDATE Libro SET Titulo = ?, AnioPublicacion = ?, Edicion = ?, Volumen = ?, Idioma = ?, Portada = ?, ContraPortada = ?, Editorial = ?, Estadistica = ? WHERE ISBN = ? LIMIT 1");
+           preparedStmt.setString(1,libro.getTitulo());
+           preparedStmt.setInt(2, libro.getAnioDePublicacion());
+           preparedStmt.setString(3, libro.getEdicion());
+           preparedStmt.setString(4,libro.getVolumen());
+           preparedStmt.setString(5, libro.getIdioma());
+           preparedStmt.setInt(5, libro.getPortada().getId());
+           preparedStmt.setInt(6, libro.getContraPortada().getId());
+           preparedStmt.setString(7, libro.getEditorial().getNombre());
+           preparedStmt.setInt(8, libro.getEstadistica().getId());
+           preparedStmt.setString(9, libro.getIsbn());
+           if(!preparedStmt.execute())retorno = -1;
+       }catch(SQLException ex){
+           retorno = -1;
+           ex.printStackTrace();
+       }           
+       conexion.cerrar();
+       
+       return retorno;
+   }
+     
     public int addLibroFisico(LibroFisico libroFisico){
         int retorno = 0;
         Conexion conexion = new Conexion();

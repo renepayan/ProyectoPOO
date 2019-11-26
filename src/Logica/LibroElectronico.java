@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import Persistencia.LibroElectronicoDB;
+
 /**
  *
  * @author Palacios Lugo Alan Yoltic                     
@@ -12,32 +14,29 @@ package Logica;
            Zepeta Rivera José Antonio 
 
  */
-public class LibroElectronico extends Libro implements Archivo{
+public class LibroElectronico extends Libro{
     private String ubicacion;
     private String extension;
     private float tamanio;
    
    
-    public LibroElectronico (){
-        this("",0000,"","","","");
-    }
-    public LibroElectronico(String titulo, 
-            int anioDePublicacion, String isbn, String edicion, String volumen, 
-            String idioma) {
+    public LibroElectronico(String ubicacion, String extension, float tamanio,
+            String titulo, int anioDePublicacion, String isbn, Autor autor,
+            Ilustrador ilustrador, Traductor traductor, String edicion,
+            String volumen, String idioma, Miniatura portada, Miniatura contraPortada,
+            Editorial editorial, Estadistica estadistica, GeneroLiterario [] generos) {
         
-        super(titulo, anioDePublicacion, isbn, edicion, volumen, idioma);
+        super(titulo, anioDePublicacion, isbn, autor, ilustrador, traductor,
+                edicion, volumen, idioma, portada, contraPortada, editorial, estadistica, generos);
+        this.ubicacion=ubicacion;
+        this.extension=extension;
+        this.tamanio=tamanio;
     }
-    public LibroElectronico (LibroElectronico libroFisico){
-        super(libroFisico);
-    }
-     public LibroElectronico(Libro libro, String ubicacion, String extension){
-        super(libro);
-        this.ubicacion = ubicacion;
-        this.extension = extension;
-    }
+   
 
     public void destruir(){
-        super.destruir();
+        if(ubicacion!=null)ubicacion=null;
+        if(extension!=null)extension=null;        
         System.gc();
     }   
 
@@ -53,22 +52,22 @@ public class LibroElectronico extends Libro implements Archivo{
         return super.equals(libroFisico);
     }   
     
-    @Override
+    
     public String leer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public String leer(String path) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public void escribir() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    
     public void escribir(String path, String contenido) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -91,5 +90,25 @@ public class LibroElectronico extends Libro implements Archivo{
 
     public float getTamanio() {
         return tamanio;
+    }
+
+    @Override
+    public boolean guardarEnDB() {
+        LibroElectronicoDB lfdb = new LibroElectronicoDB();       
+        try{
+            if(lfdb.addLibroElectronico((LibroElectronico)this.clone()) == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(CloneNotSupportedException cnse){
+            cnse.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean serLeido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
