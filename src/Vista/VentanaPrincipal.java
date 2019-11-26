@@ -1658,6 +1658,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try{
+            Notificador notificador = new Notificador("Barra cargando", "Cargando espere por favor", 0l);
+            notificador.start();
+        }catch(InterruptedException ie){
+            ie.printStackTrace();
+        }
         cb.buscar(campoBusqueda.getText());
     }//GEN-LAST:event_jButton7ActionPerformed
 
