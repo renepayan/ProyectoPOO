@@ -12,7 +12,13 @@ import Logica.Autor;
 import Logica.Ilustrador;
 import Logica.Libro;
 import Logica.Traductor;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.sql.Blob;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -1544,7 +1550,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         int returnVal = chooser.showOpenDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
             labelPathArchivo.setText(chooser.getSelectedFile().getName());            
-        }
+        }        
+        /*byte[] fileContent = null;   
+        StringBuffer fileContentStr = new StringBuffer("");
+        BufferedReader reader = null;       
+        try {        
+            reader = new BufferedReader(new FileReader(chooser.getSelectedFile().getAbsolutePath()));
+            String line = null;        
+            while ((line = reader.readLine()) != null) {           
+                fileContentStr.append(line).append("\n");
+            }        
+            fileContent = fileContentStr.toString().trim().getBytes();
+            
+            
+        } catch (IOException e) {
+            e.printStackTrace();              
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }*/
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void btnGuardarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarLibroActionPerformed

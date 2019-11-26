@@ -36,16 +36,14 @@ public class ControladorLibro {
         this.jframe = (VentanaPrincipal)jframe;
     }
     public void insertarLibro(){
-        Libro libro = new Libro(jframe.getCampoTituloLibro().getText(),
+        /*Libro libro = new Libro(jframe.getCampoTituloLibro().getText(),
                 Integer.parseInt(jframe.getCampoAnioPublicacionLibro().getText()),jframe.getCampoIsbnLibro().getText(),
                 jframe.getCampoEdicionLibro().getText(),jframe.getCampoVolumenLibro().getText(),jframe.getCampoIdiomaLibro().getText());        
         LibroDB ldb = new LibroDB();
         EditorialDB edb = new EditorialDB();        
         AutorDB adb = new AutorDB();
-        libro.setEditorial(edb.getEditorialByName((String) jframe.getCampoEditorialLibro().getSelectedItem()));
-        Autor[] autores = new Autor[1];                 
-        autores[0] = adb.getAutorByName((String)jframe.getComboBoxAutores().getSelectedItem());        
-        libro.setAutor(autores);
+        libro.setEditorial(edb.getEditorialByName((String) jframe.getCampoEditorialLibro().getSelectedItem()));        
+        libro.setAutor(adb.getAutorByName((String)jframe.getComboBoxAutores().getSelectedItem()));
         EstadisticaDB e1db = new EstadisticaDB();
         Estadistica estadistica = new Estadistica(0, "100", null);
         System.out.println(estadistica.getId()+"");
@@ -55,7 +53,8 @@ public class ControladorLibro {
         GeneroLiterarioDB gdb = new GeneroLiterarioDB();
         for(String str: jframe.getListGeneros().getSelectedValuesList()){
             gdb.linkGeneroToLibro(gdb.getGeneroLiterarioByName(str), libro);
-        }
+        }*/
+        //AQUI DEBES DE HACER EL IF ENTRE LIBRO ELECTRONICO Y LIBRO FISICO
     }
     public void ponerAutores(){
         JComboBox jcombo= jframe.getComboBoxAutores();

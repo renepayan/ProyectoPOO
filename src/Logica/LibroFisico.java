@@ -3,78 +3,70 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Logica;
+
+import Persistencia.LibroDB;
+import Persistencia.LibroElectronicoDB;
+import Persistencia.LibroFisicoDB;
 
 /**
  *
- * @author Palacios Lugo Alan Yoltic                     
-           Payan Tellez Rene 
-           Zepeta Rivera José Antonio 
-
+ * @author payan
  */
 public class LibroFisico extends Libro{
     private String lugarDePublicacion;
     private String nivelDeterioro;
-    
-    public LibroFisico (){
-        this("",0000,"","","","","","");
-    }
-    public LibroFisico(String titulo, 
-            int anioDePublicacion, String isbn, String edicion, String volumen, 
-            String idioma, String lugar, String deterioro) {
-        
-        super(titulo, anioDePublicacion, isbn, edicion, volumen, idioma);
-        lugarDePublicacion=lugar;
-        nivelDeterioro=deterioro;
-    }
-    public LibroFisico(Libro libro, String lugarDePublicacion, String nivelDeterioro){
-        super(libro);
+
+    public LibroFisico(String lugarDePublicacion, String nivelDeterioro, String titulo, int anioDePublicacion, String isbn, Autor autor, Ilustrador ilustrador, Traductor traductor, String edicion, String volumen, String idioma, Miniatura portada, Miniatura contraPortada, Editorial editorial, Estadistica estadistica, GeneroLiterario[] generos) {
+        super(titulo, anioDePublicacion, isbn, autor, ilustrador, traductor, edicion, volumen, idioma, portada, contraPortada, editorial, estadistica, generos);
         this.lugarDePublicacion = lugarDePublicacion;
         this.nivelDeterioro = nivelDeterioro;
-    }
-    public LibroFisico (LibroFisico libroFisico){
-        super(libroFisico);
-        lugarDePublicacion = libroFisico.lugarDePublicacion;
-        nivelDeterioro= libroFisico.nivelDeterioro;
-    }        
-
-    public void destruir(){
-        super.destruir();
-        if(lugarDePublicacion != null)lugarDePublicacion = null;
-        if(nivelDeterioro != null)nivelDeterioro = null;
-        System.gc();
-    }   
-
-    @Override
-    public String toString(){
-        return super.toString()+" Lugar de publicacion: "+lugarDePublicacion
-                                +"Deterioro: "+nivelDeterioro;
-    }   
-    @Override
-    public boolean equals(Object obj){
-        if(obj == null) return false;
-        if(!(obj instanceof LibroFisico)) return false;
-        LibroFisico libroFisico = (LibroFisico) obj;
-        return super.equals(libroFisico) && lugarDePublicacion.equals(libroFisico.lugarDePublicacion)
-                        && nivelDeterioro.equals(libroFisico.nivelDeterioro);
-    }   
-
-    void deteriorar(LibroFisico libro, String deterioro){
-        libro.nivelDeterioro = deterioro;
-    }
-    
-    void deteriorar(){
-        System.out.println("Estableciendo deterioro");
-        this.deteriorar(this, "normal");
     }
 
     public String getLugarDePublicacion() {
         return lugarDePublicacion;
     }
 
+    public void setLugarDePublicacion(String lugarDePublicacion) {
+        this.lugarDePublicacion = lugarDePublicacion;
+    }
+
     public String getNivelDeterioro() {
         return nivelDeterioro;
+    }
+
+    public void setNivelDeterioro(String nivelDeterioro) {
+        this.nivelDeterioro = nivelDeterioro;
+    }
+    
+    public void deteriorar(){
+        this.nivelDeterioro = "Mas deteriorado";
+    }
+    public void restaurar(){
+        this.nivelDeterioro = "Menos deteriorado";
+    }    
+    @Override
+    public boolean guardarEnDB() {
+        LibroFisicoDB lfdb = new LibroFisicoDB();       
+        try{
+            if(lfdb.addLibroFisico((LibroFisico)this.clone()) == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(CloneNotSupportedException cnse){
+            cnse.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean serLeido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    @Override
+    public String toString(){
+        return super.toString()+" Lugar de publicacion: "+lugarDePublicacion+"Deterioro: "+nivelDeterioro;
     }
     
 }

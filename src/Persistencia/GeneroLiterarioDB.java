@@ -111,4 +111,22 @@ public class GeneroLiterarioDB {
         conexion.cerrar();
         return generos;
     }
+     public List<GeneroLiterario> getGenerosByISBN(String ISBN){
+        List<GeneroLiterario> generos = new ArrayList<GeneroLiterario>();
+        Conexion conexion = new Conexion();
+        try{
+            PreparedStatement preparedStmt = conexion.getConnection().prepareStatement("SELECT * FROM GeneroLiterario WHERE id IN (SELECT Genero FROM GeneroLibro WHERE Libro = ?)");
+            preparedStmt.setString(1,ISBN);
+            ResultSet rs = preparedStmt.executeQuery();
+            while(rs.next()){
+                generos.add(new GeneroLiterario(
+                        rs.getString("Nombre")
+                ));
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        conexion.cerrar();
+        return generos;
+    }
 }
