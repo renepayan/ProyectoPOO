@@ -13,10 +13,12 @@ public class Notificador extends Thread {
 
 	@Override
 	public void run() {
-
-		System.out.println(mensaje
-					+ (System.currentTimeMillis() - this.initialTime) / 1000
-					+ "%");
+	
+		for(int i = 1;i<=100;i++){
+			System.out.println(mensaje+ " "+i+ "%");
+			this.esperarXsegundos(1);
+		}
+		
 	}
 
 	public void setMensaje(String mensaje){
